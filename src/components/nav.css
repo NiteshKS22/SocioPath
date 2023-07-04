@@ -1,0 +1,91 @@
+/* styles.css */
+
+.navbar {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 2px solid #2E72F5;
+    position: relative; /* Create a relative positioning context */
+    z-index: 1; /* Ensure the navbar appears on top of other elements */
+  }
+  
+  .navbar::after {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background: linear-gradient(to bottom, #2563EB, transparent); /* Add a gradient overlay */
+    z-index: -1; /* Place the gradient behind the navbar */
+  }
+  
+  .navbar .logo {
+    font-size: 32px; /* Increase the logo font size */
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase; /* Uppercase the logo text */
+    transition: text-shadow 0.5s ease; /* Add a smooth transition for the glowing effect */
+  }
+  
+  .navbar:hover .logo {
+    text-shadow: 0 0 4px #FFFFFF, 0 0 6px #2E72F5, 0 0 8px #2E72F5, 0 0 12px #2E72F5; /* Create a glowing effect on hover */
+  }
+  
+  .navbar .nav-items {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .nav-items button {
+    display: flex;
+    align-items: center;
+    space-x: 12px; /* Increase the spacing between icon and text */
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .navbar .nav-items button:hover {
+    color: #B2B8D1;
+  }
+  
+  .navbar .nav-items button svg {
+    height: 32px; /* Increase the icon size */
+    width: 32px;
+  }
+  
+  .navbar .nav-items button span {
+    font-size: 20px; /* Increase the text font size */
+    letter-spacing: 2px;
+    transition: transform 0.3s ease; /* Add a smooth transition for the scale effect */
+  }
+  
+  .navbar .nav-items button:hover span {
+    transform: scale(1.1); /* Scale up the text on hover */
+  }
+  
+  .navbar .nav-items button:active {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+  }
+  
+  /* Add a futuristic animation to the logo */
+  .navbar .logo {
+    animation: neonGlow 1.5s linear infinite alternate;
+  }
+  
+  @keyframes neonGlow {
+    from {
+      text-shadow: 0 0 4px #FFFFFF, 0 0 6px #2E72F5, 0 0 8px #2E72F5, 0 0 12px #2E72F5;
+    }
+    to {
+      text-shadow: 0 0 8px #FFFFFF, 0 0 12px #2E72F5, 0 0 16px #2E72F5, 0 0 24px #2E72F5;
+    }
+  }
+  
